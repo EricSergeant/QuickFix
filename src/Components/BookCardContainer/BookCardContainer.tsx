@@ -1,9 +1,14 @@
 import React from 'react';
+import BookCard from '../BookCard/BookCard';
+import './BookCardContainer.css';
 
 const BookCardContainer = () => {
 
   return (
-    <h4>Card Container goes here</h4>
+    <div className="book-card-container">
+      <p>Test</p>
+      <BookCard />
+    </div>
   )
 }
 

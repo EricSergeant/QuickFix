@@ -5,15 +5,22 @@ import BookCardContainer from '../BookCardContainer/BookCardContainer';
 import BookCard from '../BookCard/BookCard';
 
 // import { getBooksByCategory, getSeafood } from './apiCalls';
-import { getBookByHistory } from '../../apiCalls';
+import { getBookByCategory } from '../../apiCalls';
 // import { Route } from 'react-router-dom';
 import './App.css';
 import "./library.jpg"
 
 const App: React.FC = () => {
+  const [books, setBooks] = useState([])
+
+  const retrieveBooks = () => {
+    getBookByCategory()
+      .then((data: {works: []}) => setBooks(data.works))
+      .then(() => console.log(books))
+  }
 
   useEffect(() => {
-    getBookByHistory()
+    retrieveBooks()
   }, [])
 
   return (

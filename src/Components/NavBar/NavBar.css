@@ -13,7 +13,7 @@
   justify-content: center;
 }
 
-.sidenav p {
+.sidenav button {
   padding: 8px;
   text-decoration: none;
   font-size: 25px;
@@ -26,7 +26,7 @@
   margin: 20px;
 }
 
-.sidenav p:hover {
+.sidenav button:hover {
   color: #343d56;
   background-color: #b0969b;
 }
