@@ -28,10 +28,10 @@
 
 .sidenav p:hover {
   color: #343d56;
-  background-color: #fbc9a7;
+  background-color: #b0969b;
 }
 
-/* .sidenav p:selection {
+/* .sidenav p:focus {
   color: #f1f1f1;
   background-color: #82a195;
 } */
