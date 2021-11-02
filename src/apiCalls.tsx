@@ -36,4 +36,7 @@ i.e. key: "/works/OL61981W"
 source for individual book cover = https://covers.openlibrary.org/b/id/<coverID>-L.jpg
 <coverID> is the number given as the value to the cover key for each book
 *note* -L stands for large picture -- you could also use -S or -M for small or medium thumbnails
+
+books by category: https://openlibrary.org/subjects/<category>
+<category> is the book genre
 */
