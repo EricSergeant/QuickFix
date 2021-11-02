@@ -1,11 +1,10 @@
-/* .book-card-grid {
+.book-card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 2rem;
   border: solid 5px black;
-  perspective: 1000px;
-} */
+}
 
 .book-card {
   background-color: transparent;
