@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import BookPage from './Components/BookPage/BookPage';
 import Nav from './Components/NavBar/NavBar';
 import BookCardContainer from './Components/BookCardContainer/BookCardContainer';
-import BookCard from './Components/BookCard/BookCard';
+// import BookCard from './Components/BookCard/BookCard';
 // import { getBooksByCategory, getSeafood } from './apiCalls';
 import { getBookByHistory } from './apiCalls';
 
