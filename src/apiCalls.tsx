@@ -20,12 +20,29 @@
 //     .catch(error => console.log(error))
 // };
 
-export const getBookByHistory = () => {
-  fetch('https://openlibrary.org/subjects/history.json')
+// interface res {
+//   data: {ok: boolean, status: {text: string}, json(): string}[]
+//  }
+
+
+export const getBookByCategory = (category: string) => {
+  return fetch(`https://openlibrary.org/subjects/${category}.json`)
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
+    .catch(err => console.log(err))
 };
+
+//refactor any VVVV
+
+
+
+//  const checkResponse = (data: res) => {
+//    if (!data.ok) {
+//      throw new Error(
+//        `Status: ${data.status} StatusText: ${data.status.text}`
+//      );
+//    }
+//    return data.json();
+//  }
 
 ////////ENDPOINTS ////////
 /*
