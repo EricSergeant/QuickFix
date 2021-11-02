@@ -7,8 +7,6 @@ interface Props {
 
 const BookCard: React.FC<Props> = ({ title, cover_id }) => {
 
-  // const coverString = cover.toString()
-
   return (
     <div className="book-card-grid">
       <div className="book-card">
@@ -22,7 +20,6 @@ const BookCard: React.FC<Props> = ({ title, cover_id }) => {
           </div>
           <div className="book-card-back">
             <p>Book Title: {title}</p>
-            {/* <p>Book Description</p> */}
           </div>
         </div>
       </div>

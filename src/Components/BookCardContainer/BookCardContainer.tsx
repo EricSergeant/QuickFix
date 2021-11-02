@@ -6,8 +6,6 @@ interface Props {
   allBooks: { title: string, cover_id: number }[]
 }
 
-// const BookCardContainer: React.FC<Props> = ({ allBooks }: Props): JSX.Element => {
-
 const BookCardContainer: React.FC<Props> = ({ allBooks }) => {
 
   const bookCards = allBooks.map((book) => {
@@ -18,21 +16,9 @@ const BookCardContainer: React.FC<Props> = ({ allBooks }) => {
   return (
     <div className="book-card-container">
       <p>Test</p>
-      {/* <BookCard allBooks={allBooks} /> */}
       {bookCards}
     </div>
   )
 }
 
 export default BookCardContainer;
-
-
-// const UserProfile: FC = ({ user }): JSX.Element => {
-//   <>
-//     {user.firstName}
-//     <br />
-//     {user.dob}
-//     <br />
-//     {user.bio}
-//   </>
-// };
