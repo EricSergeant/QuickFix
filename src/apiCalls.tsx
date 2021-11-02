@@ -25,9 +25,10 @@
 //  }
 
 
-export const getBookByCategory = (): any => {
-  return fetch(`https://openlibrary.org/subjects/history.json`)
+export const getBookByCategory = (category: string) => {
+  return fetch(`https://openlibrary.org/subjects/${category}.json`)
     .then(response => response.json())
+    .catch(err => console.log(err))
 };
 
 //refactor any VVVV

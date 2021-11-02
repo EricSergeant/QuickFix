@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [books, setBooks] = useState([])
 
   const retrieveBooks = () => {
-    getBookByCategory()
+    getBookByCategory('history')
       .then((data: {works: []}) => setBooks(data.works))
       .then(() => console.log(books))
   }
@@ -30,7 +30,7 @@ const App: React.FC = () => {
       <h1>Quick Fix Landing Page</h1>
       <p></p>
       <BookPage />
-      <BookCardContainer />
+      <BookCardContainer allBooks={books}/>
       <BookCard />
     </main>
     </div>

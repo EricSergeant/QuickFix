@@ -2,7 +2,11 @@ import React from 'react';
 import BookCard from '../BookCard/BookCard';
 import './BookCardContainer.css';
 
-const BookCardContainer = () => {
+interface Props {
+  allBooks: {title: string, cover: number, key: string}[]
+}
+
+const BookCardContainer = ({ allBooks }: Props) => {
 
   return (
     <div className="book-card-container">
