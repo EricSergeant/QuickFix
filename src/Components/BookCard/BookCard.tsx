@@ -3,7 +3,11 @@ import React from 'react';
 const BookCard = () => {
 
   return (
-    <p>Book card here</p>
+    <div className="book-card">
+      <p>Book card here</p>
+      <p>Book card here</p>
+      <p>Book card here</p>
+    </div>
   )
 }
 
