@@ -1,18 +1,25 @@
-import React from 'react';
-import RecipePage from './RecipePage';
+import React, {useState, useEffect} from 'react';
+import BookPage from './BookPage';
 import Nav from './Nav';
-import RecipeCardContainer from './RecipeCardContainer';
-import RecipeCard from './RecipeCard';
+import BookCardContainer from './BookCardContainer';
+import BookCard from './BookCard';
+// import { getBooksByCategory, getSeafood } from './apiCalls';
+import { getBookByHistory } from './apiCalls';
 
-const App: React.FC= () => {
+const App: React.FC = () => {
+
+  useEffect(() => {
+    getBookByHistory()
+  }, [])
 
   return (
     <main>
       <h1>Quick Fix Landing Page</h1>
-      <RecipePage />
+      <p></p>
+      <BookPage />
       <Nav />
-      <RecipeCardContainer />
-      <RecipeCard />
+      <BookCardContainer />
+      <BookCard />
     </main>
   )
 }
