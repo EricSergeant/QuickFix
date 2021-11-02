@@ -1,0 +1,37 @@
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #343d56;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav p {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #343d56;
+  border-radius: 10px;
+  background-color: white;
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.sidenav p:hover {
+  color: #343d56;
+  background-color: #b0969b;
+}
+
+/* .sidenav p:focus {
+  color: #f1f1f1;
+  background-color: #82a195;
+} */
