@@ -31,7 +31,6 @@ const App: React.FC = () => {
         <p></p>
         <BookPage />
         <BookCardContainer allBooks={books} />
-        <BookCard />
       </main>
     </div>
   )
