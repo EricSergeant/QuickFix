@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import BookPage from '../BookPage/BookPage';
 import NavBar from '../NavBar/NavBar';
 import BookCardContainer from '../BookCardContainer/BookCardContainer';
@@ -11,18 +11,18 @@ import "./library.jpg"
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
 
-  const retrieveBooks = () => {
-    getBookByCategory('history')
+  const retrieveBooks = (category: string) => {
+    getBookByCategory(category)
       .then((data: { works: [] }) => setBooks(data.works))
   }
 
-  useEffect(() => {
-    retrieveBooks()
-  }, [])
+  // useEffect(() => {
+  //   retrieveBooks()
+  // }, [])
 
   return (
     <div className="backGround">
-      <NavBar />
+      <NavBar retrieveBooks={retrieveBooks} />
       <main>
         <h1>Quick Fix Landing Page</h1>
         <p></p>
