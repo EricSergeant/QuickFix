@@ -30,10 +30,10 @@
 
 .sidenav button:hover {
   color: #343d56;
-  background-color: #b0969b;
+  background-color: #82a195;
 }
 
-.sidenav p:focus {
+.sidenav button:focus {
   color: #f1f1f1;
   background-color: #82a195;
 }
