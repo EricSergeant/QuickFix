@@ -4,6 +4,15 @@ export const getBookByCategory = (category: string) => {
     .catch(err => console.log(err))
 };
 
+// export const getIndividualBook = (availability: string) => {
+//   return fetch(`https://openlibrary.org/${availability.openlibrary_work}.json`)
+//   .then(response => response.json())
+//   .catch(err => console.log(err))
+// }
+//availability.openlibrary_work will also get you the value that needs to be interpolated in 
+
+
+
 //refactor any VVVV
 
 
@@ -19,7 +28,7 @@ export const getBookByCategory = (category: string) => {
 
 ////////ENDPOINTS ////////
 /*
-single book : https://openlibrary.org/<works.key>
+single book : https://openlibrary.org/<availability.openlibrary_work>
 <works.key> is found in each book's works.key value
 i.e. key: "/works/OL61981W"
 
