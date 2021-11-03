@@ -29,6 +29,7 @@ const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) =>
           </div>
           <div className="book-card-back">
             <p className="book-title">{title}</p>
+            <br></br><p>written by</p>
             <p className="book-authors">{authors[0].name}</p>
           </div>
         </div>
