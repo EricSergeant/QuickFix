@@ -4,9 +4,10 @@ export const getBookByCategory = (category: string) => {
     .catch(err => console.log(err))
 };
 
-export const getIndividualBook = () => {
-  return fetch(`https://openlibrary.org/works/OL61981W.json`)
+export const getIndividualBook = (id: any) => {
+  return fetch(`https://openlibrary.org${id}.json`)
   .then(response => response.json())
+  // .then(() => console.log(id))
   .then(data => (console.log(data)))
   .catch(err => console.log(err))
 }
