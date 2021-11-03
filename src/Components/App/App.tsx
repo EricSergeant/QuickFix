@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import BookPage from '../BookPage/BookPage';
 import NavBar from '../NavBar/NavBar';
 import BookCardContainer from '../BookCardContainer/BookCardContainer';
-import BookDetails from '../BookDetails/BookDetails'
+import BookDetails from '../BookDetails/BookDetails';
+import Home from '../Home/Home';
+import Error from '../Error/Error';
 import { getBookByCategory, getSingleBook } from '../../apiCalls';
-import { Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import "./library.jpg"
 import { stringify } from 'querystring';
@@ -24,14 +26,24 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="backGround">
-      <NavBar retrieveBooks={retrieveBooks} />
-      <main>
-        <h1 className="project-title">A Novel Idea</h1>
-        <BookCardContainer allBooks={books} oneBook={retrieveSingleBook}/>
-          <BookDetails />
-      </main>
-    </div>
+        <div className="backGround">
+          <main>
+            <h1 className="project-title">A Novel Idea</h1>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route exact path='/books'>
+              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook}/>
+              <NavBar retrieveBooks={retrieveBooks} />
+            </Route>
+            <Route exact path='/bookDetails'>
+              <BookDetails />
+            </Route>
+            <Route exact path='/error'>
+              <Error />
+            </Route>
+          </main>
+        </div>
   )
 }
 
