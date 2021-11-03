@@ -15,7 +15,6 @@ const BookCardContainer: React.FC<Props> = ({ allBooks }) => {
   })
   return (
     <div className="book-card-container">
-      <p>Test</p>
       {bookCards}
     </div>
   )
