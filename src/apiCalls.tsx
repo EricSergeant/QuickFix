@@ -1,30 +1,3 @@
-// export const getRecipesByCategory = (category: string) => {
-//   fetch(`www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error))
-// };
-//
-// export const getSingleRecipe = (recipeName: string) => {
-//   fetch(`www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`)
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error))
-// };
-//
-// ///////TEST HARD CODED FETCH /////////
-// export function getSeafood() {
-//   return fetch('www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error))
-// };
-
-// interface res {
-//   data: {ok: boolean, status: {text: string}, json(): string}[]
-//  }
-
-
 export const getBookByCategory = (category: string) => {
   return fetch(`https://openlibrary.org/subjects/${category}.json`)
     .then(response => response.json())

@@ -3,15 +3,20 @@ import BookCard from '../BookCard/BookCard';
 import './BookCardContainer.css';
 
 interface Props {
-  allBooks: {title: string, cover: number, key: string}[]
+  allBooks: { title: string, cover_id: number }[]
 }
 
-const BookCardContainer = ({ allBooks }: Props) => {
+const BookCardContainer: React.FC<Props> = ({ allBooks }) => {
 
+  const bookCards = allBooks.map((book) => {
+    return (
+      <BookCard title={book.title} cover_id={book.cover_id} key={book.title} />
+    )
+  })
   return (
     <div className="book-card-container">
       <p>Test</p>
-      <BookCard />
+      {bookCards}
     </div>
   )
 }
