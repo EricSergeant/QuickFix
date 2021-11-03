@@ -3,7 +3,7 @@ import BookPage from '../BookPage/BookPage';
 import NavBar from '../NavBar/NavBar';
 import BookCardContainer from '../BookCardContainer/BookCardContainer';
 
-import { getBookByCategory } from '../../apiCalls';
+import { getBookByCategory, getIndividualBook } from '../../apiCalls';
 // import { Route } from 'react-router-dom';
 import './App.css';
 import "./library.jpg"
@@ -15,6 +15,10 @@ const App: React.FC = () => {
     getBookByCategory(category)
       .then((data: { works: [] }) => setBooks(data.works))
   }
+
+    // const fake = () => {
+    //   getIndividualBook()
+    // }
 
   // useEffect(() => {
   //   retrieveBooks()

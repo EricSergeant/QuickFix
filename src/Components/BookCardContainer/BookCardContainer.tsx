@@ -3,7 +3,7 @@ import BookCard from '../BookCard/BookCard';
 import './BookCardContainer.css';
 
 interface Props {
-  allBooks: { title: string, cover_id: number }[]
+  allBooks: { title: string, cover_id: number}[]
 }
 
 const BookCardContainer: React.FC<Props> = ({ allBooks }) => {
