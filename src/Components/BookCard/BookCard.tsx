@@ -2,7 +2,7 @@ import React from 'react';
 import './BookCard.css';
 import { getIndividualBook } from '../../apiCalls'
 interface Props {
-  title: string, cover_id: number, key: any, id: any
+  title: string, cover_id: number, key: any, id: string
 }
 
 const BookCard: React.FC<Props> = ({ title, cover_id, id }) => {
@@ -11,7 +11,7 @@ const BookCard: React.FC<Props> = ({ title, cover_id, id }) => {
   //   getIndividualBook(id)
   // }, [])
 
-  const fake = (id: any) => {
+  const fake = (id: string) => {
     getIndividualBook(id) 
   }
 

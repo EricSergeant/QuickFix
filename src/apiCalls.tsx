@@ -4,7 +4,7 @@ export const getBookByCategory = (category: string) => {
     .catch(err => console.log(err))
 };
 
-export const getIndividualBook = (id: any) => {
+export const getIndividualBook = (id: string) => {
   return fetch(`https://openlibrary.org${id}.json`)
   .then(response => response.json())
   // .then(() => console.log(id))
