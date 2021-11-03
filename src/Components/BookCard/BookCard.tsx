@@ -15,11 +15,11 @@ const BookCard: React.FC<Props> = ({ title, cover_id }) => {
             <img
               className="book-cover-img"
               src={`https://covers.openlibrary.org/b/id/${cover_id}-L.jpg`}
-              alt='A grinning fox stealing a cooked turkey'
+              alt={title}
             />
           </div>
           <div className="book-card-back">
-            <p>Book Title: {title}</p>
+            <p className="book-title">{title}</p>
           </div>
         </div>
       </div>

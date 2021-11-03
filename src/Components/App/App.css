@@ -1,12 +1,22 @@
+.project-title {
+  font-family: cursive;
+  font-size: 60px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  z-index: 1;
+}
+
 .backGround {
   background: url(library.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
 }
 
 main {
   color: white;
-  height: 807px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -24,9 +24,7 @@ const App: React.FC = () => {
     <div className="backGround">
       <NavBar retrieveBooks={retrieveBooks} />
       <main>
-        <h1>Quick Fix Landing Page</h1>
-        <p></p>
-        <BookPage />
+        <h1 className="project-title">A Novel Idea</h1>
         <BookCardContainer allBooks={books} />
       </main>
     </div>
