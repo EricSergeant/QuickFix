@@ -30,7 +30,7 @@ const App: React.FC = () => {
           <main>
             <h1 className="project-title">A Novel Idea</h1>
             <Route exact path='/'>
-              <Home />
+              <Home retrieveBooks={retrieveBooks} />
             </Route>
             <Route exact path='/books'>
               <BookCardContainer allBooks={books} oneBook={retrieveSingleBook}/>
