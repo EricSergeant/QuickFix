@@ -22,15 +22,20 @@ export interface Book {
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
   const [singleBook, setSingleBook] = useState<Book>({title: '', description: '', authors: [], links: [], covers: []})
+  const [errorGetCategory, setErrorCategoryState] = useState(false)
+  const [errorGetSingle, setErrorSingleState] = useState(false)
 
   const retrieveBooks = (category: string) => {
     getBookByCategory(category)
       .then((data: { works: [] }) => setBooks(data.works))
+      .catch(error => setErrorCategoryState(true))
   }
 
   const retrieveSingleBook = (id: string) => {
     getSingleBook(id)
-      .then((data) => setSingleBook(data))
+      .then(data => setSingleBook(data))
+    //  .then(() => console.log(singleBook))
+      .catch(error => setErrorSingleState(true))
   }
 
   return (
@@ -38,21 +43,20 @@ const App: React.FC = () => {
           <main>
             <h1 className="project-title">A Novel Idea</h1>
             <Route exact path='/'>
-              <Home />
+              <Home retrieveBooks={retrieveBooks} />
             </Route>
             <Route exact path='/books'>
-              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} />
-              <NavBar retrieveBooks={retrieveBooks} />
+              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
+              <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
             </Route>
-            
             <Route
-          exact
-          path="/bookDetails">
+          exact path="/bookDetails">
             <BookDetails singleBook={singleBook}/>
-            <NavBar retrieveBooks={retrieveBooks} />
+            <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory}/>
             </Route>
             <Route exact path='/error'>
-              <Error />
+            {/* error works, not chaing path? */}
+              <Error /> 
             </Route>
           </main>
         </div>
