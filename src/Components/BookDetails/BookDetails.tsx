@@ -1,19 +1,18 @@
 import React from 'react'
 import './BookDetails.css'
 
-// interface shitProps {
-  
-//   shit: {title: any, authors: any, description: any, links: any}
+// interface SingleBookProps {
+//   singleBook: {title: string, authors: [], description: string, links: []}
 // }
 
-// // const shit: React.FC<shitProps> = ({ shit }) => {
-//   const BookDetails: React.FC<shitProps> = ({ shit }) => {
+// // // // const shit: React.FC<shitProps> = ({ shit }) => {
+//   const BookDetails: React.FC<SingleBookProps> = ({ singleBook }: SingleBookProps) => {
 //   return (
 //     <>
-//     <h1 className="title">{shit.title}</h1>
-//     <h2 className="author">{shit.authors}</h2>
-//     <p className="description">{shit.description}</p>
-//     <p className="links">{shit.links}</p>
+//     <h1 className="title">{singleBook.title}</h1>
+//     <h2 className="author">{singleBook.authors}</h2>
+//     <p className="description">{singleBook.description}</p>
+//     <p className="links">{singleBook.links}</p>
 //     </>
 //   )
 // } 
@@ -34,7 +33,6 @@ const BookDetails = () => {
     <div className="book-detail-styling">
     <h1 className="title">Pride and Prejudice</h1>
     <h2 className="author">by Jane Austen</h2>
-    <div className="border-bottom"></div>
     <a href="https://wikipedia.com" className="links">Wikipedia</a>
     </div>
     </div>
