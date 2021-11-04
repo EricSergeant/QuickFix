@@ -1,0 +1,62 @@
+.book-styling {
+  width: 1000px;
+  height: 650px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.description-styling {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 380px;
+  color: black;
+  font-size: 23px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.description {
+  color: black;
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 1.6;
+  margin-top: 6px;
+  padding-top: 10px;
+  width: 935px;
+}
+
+.book-detail-styling {
+  font-family: Poynter, Georgia, serif;
+  color: black;
+  font-weight: 400;
+  margin: 20px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.book-cover {
+  height: 400px;
+  width: 310px;
+  border-radius: 3px;
+  margin: 30px;
+  box-shadow: 0.5rem 0.25rem 0.25rem black;
+}
+
+.title {
+  font-size: 35px;
+  margin-bottom: 0px;
+}
+
+.author {
+  font-size: 20px;
+}
+
+.links {
+  margin-top: 20px;
+}
