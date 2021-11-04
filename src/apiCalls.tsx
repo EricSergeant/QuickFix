@@ -1,5 +1,5 @@
 export const getBookByCategory = (category: string) => {
-  return fetch(`https://openlibrary.org/subjects/${category}.jsn`)
+  return fetch(`https://openlibrary.org/subjects/${category}.json`)
     .then(response => response.json())
     // .catch(err => console.log(err))
 };
@@ -11,7 +11,7 @@ export const getSingleBook = (id: string) => {
   // .then(data => (console.log(data)))
   // .catch(err => console.log(err))
 }
-//availability.openlibrary_work will also get you the value that needs to be interpolated in 
+//availability.openlibrary_work will also get you the value that needs to be interpolated in
 
 
 
