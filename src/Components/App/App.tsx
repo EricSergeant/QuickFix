@@ -37,6 +37,7 @@ const App: React.FC = () => {
               <NavBar retrieveBooks={retrieveBooks} />
             </Route>
             <Route exact path='/bookDetails'>
+            <NavBar retrieveBooks={retrieveBooks} />
               <BookDetails />
             </Route>
             <Route exact path='/error'>
