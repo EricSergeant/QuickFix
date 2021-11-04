@@ -1,0 +1,53 @@
+.home-page {
+  margin: 1rem;
+  padding: .5rem;;
+  display: flex;
+  flex-direction: column;
+  background-color: #343d56;
+}
+
+.slogan {
+  font-size: 28pt;
+  margin: 0;
+  font-weight: 300;
+}
+
+.goal,
+.getting-started-prompt {
+  font-size: 16pt;
+  font-weight:200;
+  margin: .5rem;
+}
+
+.getting-started-prompt {
+  font-weight: 400;
+}
+
+/* .genre-button-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5rem;
+} */
+
+.home-page-btn {
+  /* display: block; */
+  font-family: cursive;
+  text-align:left;
+  height: 50px;
+  width: 378px;
+  font-size: 1rem;
+  padding: .5rem;
+  margin: .5rem;
+  background-color: #fefae0;
+  border-radius: 100px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.home-page-btn:hover {
+  color: #343d56;
+  background-color: #82a195;
+  transform:scale(1.1);
+  box-shadow: 10px 5px 5px #ffe8d6;
+}
