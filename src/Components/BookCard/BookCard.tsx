@@ -12,7 +12,7 @@ const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) =>
 
   return (
     <Link to={`bookDetails`}>
-    <div className="book-card-grid">
+    <div className="book-card-grid" onClick={() => oneBook(id)}>
       <div className="book-card">
         {/* <button onClick={() => oneBook(id)}>Book Info</button> */}
         <div className="book-card-inner">
