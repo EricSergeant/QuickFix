@@ -11,9 +11,17 @@ import './App.css';
 import "./library.jpg"
 import { stringify } from 'querystring';
 
+export interface Book {
+  title: any;
+  description: any; 
+  authors: any;
+  links: any;
+  covers: any
+}
+
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
-  const [singleBook, setSingleBook] = useState()
+  const [singleBook, setSingleBook] = useState<Book>({title: '', description: '', authors: [], links: [], covers: []})
   const [errorGetCategory, setErrorCategoryState] = useState(false)
   const [errorGetSingle, setErrorSingleState] = useState(false)
 
@@ -23,7 +31,7 @@ const App: React.FC = () => {
       .catch(error => setErrorCategoryState(true))
   }
 
-  const retrieveSingleBook = (id: string) => {
+  const retrieveSingleBook = (id: any) => {
     getSingleBook(id)
       .then(data => setSingleBook(data))
     //  .then(() => console.log(singleBook))
@@ -41,8 +49,10 @@ const App: React.FC = () => {
               <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
               <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
             </Route>
-            <Route exact path='/bookDetails'>
-              <BookDetails />
+            <Route
+          exact path="/bookDetails">
+            <BookDetails singleBook={singleBook}/>
+            <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory}/>
             </Route>
             <Route exact path='/error'>
             {/* error works, not chaing path? */}
