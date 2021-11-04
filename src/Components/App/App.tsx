@@ -11,9 +11,17 @@ import './App.css';
 import "./library.jpg"
 import { stringify } from 'querystring';
 
+export interface Book {
+  title: any;
+  description: any; 
+  authors: any;
+  links: any;
+  covers: any
+}
+
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
-  const [singleBook, setSingleBook] = useState({})
+  const [singleBook, setSingleBook] = useState<Book>({title: '', description: '', authors: [], links: [], covers: []})
 
   const retrieveBooks = (category: string) => {
     getBookByCategory(category)
@@ -22,7 +30,7 @@ const App: React.FC = () => {
 
   const retrieveSingleBook = (id: string) => {
     getSingleBook(id)
-      .then(data => setSingleBook(data))
+      .then((data) => setSingleBook(data))
   }
 
   return (
@@ -40,7 +48,7 @@ const App: React.FC = () => {
             <Route
           exact
           path="/bookDetails">
-            <BookDetails />
+            <BookDetails singleBook={singleBook}/>
             <NavBar retrieveBooks={retrieveBooks} />
             </Route>
             <Route exact path='/error'>
