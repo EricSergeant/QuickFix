@@ -13,16 +13,21 @@ import { stringify } from 'querystring';
 
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
-  const [singleBook, setSingleBook] = useState({})
+  const [singleBook, setSingleBook] = useState()
+  const [errorGetCategory, setErrorCategoryState] = useState(false)
+  const [errorGetSingle, setErrorSingleState] = useState(false)
 
   const retrieveBooks = (category: string) => {
     getBookByCategory(category)
       .then((data: { works: [] }) => setBooks(data.works))
+      .catch(error => setErrorCategoryState(true))
   }
 
   const retrieveSingleBook = (id: string) => {
     getSingleBook(id)
       .then(data => setSingleBook(data))
+    //  .then(() => console.log(singleBook))
+      .catch(error => setErrorSingleState(true))
   }
 
   return (
@@ -33,14 +38,15 @@ const App: React.FC = () => {
               <Home />
             </Route>
             <Route exact path='/books'>
-              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook}/>
-              <NavBar retrieveBooks={retrieveBooks} />
+              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
+              <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
             </Route>
             <Route exact path='/bookDetails'>
               <BookDetails />
             </Route>
             <Route exact path='/error'>
-              <Error />
+            {/* error works, not chaing path? */}
+              <Error /> 
             </Route>
           </main>
         </div>
