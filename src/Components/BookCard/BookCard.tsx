@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { getSingleBook } from '../../apiCalls'
 
 interface Props {
-  title: string, cover_id: number, key: any, id: string, authors: any
+  title: string, cover_id: number, key: any, id: any, authors: any
   oneBook: Function
 }
 

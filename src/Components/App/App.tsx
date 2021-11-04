@@ -31,7 +31,7 @@ const App: React.FC = () => {
       .catch(error => setErrorCategoryState(true))
   }
 
-  const retrieveSingleBook = (id: string) => {
+  const retrieveSingleBook = (id: any) => {
     getSingleBook(id)
       .then(data => setSingleBook(data))
     //  .then(() => console.log(singleBook))
