@@ -31,14 +31,11 @@ const BookDetails = () => {
     <p className="description">Pride & Prejudice established the template for an infinity of romance novels, yet no subsequent love story has ever come close to equaling the delights of the original.</p>
     </div>
     </div>
-    
     <div className="book-detail-styling">
     <h1 className="title">Pride and Prejudice</h1>
     <h2 className="author">by Jane Austen</h2>
-    
-    
+    <div className="border-bottom"></div>
     <a href="https://wikipedia.com" className="links">Wikipedia</a>
-    
     </div>
     </div>
     
