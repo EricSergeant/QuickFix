@@ -33,12 +33,15 @@ const App: React.FC = () => {
               <Home />
             </Route>
             <Route exact path='/books'>
-              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook}/>
+              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} />
               <NavBar retrieveBooks={retrieveBooks} />
             </Route>
-            <Route exact path='/bookDetails'>
+            
+            <Route
+          exact
+          path="/bookDetails">
+            <BookDetails />
             <NavBar retrieveBooks={retrieveBooks} />
-              <BookDetails />
             </Route>
             <Route exact path='/error'>
               <Error />
