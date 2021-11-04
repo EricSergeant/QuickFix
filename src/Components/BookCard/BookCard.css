@@ -48,7 +48,8 @@
 }
 
 .book-title {
-  font-family: cursive;
+  /* font-family: cursive; */
+  font-style: italic;
   padding-top: 30px;
   font-size: 27px;
 }
