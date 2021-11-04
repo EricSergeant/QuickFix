@@ -13,16 +13,17 @@
   margin-top: 15px;
   margin-left: 20px;
   width: 380px;
-  color: black;
+  color: #343d56;
   font-size: 23px;
   font-style: italic;
   font-weight: bold;
 }
 
 .description {
-  color: black;
+  color: #343d56;
   font-size: 16px;
   font-weight: lighter;
+  font-style: normal;
   line-height: 1.6;
   margin-top: 6px;
   padding-top: 10px;
@@ -31,7 +32,7 @@
 
 .book-detail-styling {
   font-family: Poynter, Georgia, serif;
-  color: black;
+  color: #343d56;
   font-weight: 400;
   margin: 20px;
   margin-left: 0px;
@@ -55,8 +56,12 @@
 
 .author {
   font-size: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+  width: 550px;
 }
 
 .links {
   margin-top: 20px;
+  color: #346250;
 }
