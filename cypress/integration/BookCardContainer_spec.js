@@ -1,5 +1,3 @@
-// import App from '.../src/Components/App/App.tsx';
-
 describe('BookCardContainer view', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/books')
@@ -40,6 +38,7 @@ describe('BookCardContainer view', () => {
     cy.get('.book-cover-img')
       .should('be.visible')
       .should('have.length', 4)
+    // cy.get('.book-card').contains('cover_id').trigger('mouseover')
   });
 
   it.skip('Should see the selected genre highlighted in green', () => {
@@ -47,10 +46,15 @@ describe('BookCardContainer view', () => {
   });
 
   it.skip('Should be able to see book covers flip over and reveal the title and author', () => {
+    // cy.get('.book-cover-image').trigger('mouseover')
 
   });
 
   it.skip('Should be able to click on a book cover and be linked to a new page with that book\'s details', () => {
+
+  });
+
+  it.skip('Should be redirected to an error page with a 500 status code', () => {
 
   });
 });
