@@ -18,7 +18,9 @@ interface SingleBookProps {
       src={`https://covers.openlibrary.org/b/id/${singleBook.covers[0]}-L.jpg`}
     />
     <div className="description-styling">Overview
-    <p className="description">{singleBook.description}</p>
+    {typeof singleBook.description === "string" ?  <p className="description">{singleBook.description}</p> : 
+    <p className="description">{singleBook.description.value}</p> }
+    
     </div>
     </div>
     <div className="book-detail-styling">
