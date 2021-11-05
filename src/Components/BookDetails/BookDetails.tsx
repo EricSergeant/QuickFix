@@ -1,11 +1,14 @@
 import React from 'react'
 import './BookDetails.css'
 import {Book} from '../App/App'
+
 interface SingleBookProps {
   singleBook: Book
 }
 
   const BookDetails: React.FC<SingleBookProps> = ({ singleBook }: SingleBookProps) => {
+
+
 
   return (
     <div className="book-styling">
@@ -21,7 +24,8 @@ interface SingleBookProps {
     <div className="book-detail-styling">
     <h1 className="title">{singleBook.title}</h1>
     <h2 className="author">by Jane Austen</h2>
-    <a href="https://wikipedia.com" className="links">{singleBook.links}</a>
+    {singleBook.links ? <a href={singleBook.links[0].url} className="links">Go to link </a> : null }
+    
     </div>
     </div>
     

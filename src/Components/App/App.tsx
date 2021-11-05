@@ -21,7 +21,7 @@ export interface Book {
 
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
-  const [singleBook, setSingleBook] = useState<Book>({title: '', description: '', authors: [], links: [], covers: []})
+  const [singleBook, setSingleBook] = useState<Book>({title: '', description: "" , authors: [{author: {key: ""}, type: {key: ""}}], links: [{url: "", title: "", type: ""}], covers: []})
   const [errorGetCategory, setErrorCategoryState] = useState(false)
   const [errorGetSingle, setErrorSingleState] = useState(false)
 
@@ -34,7 +34,7 @@ const App: React.FC = () => {
   const retrieveSingleBook = (id: any) => {
     getSingleBook(id)
       .then(data => setSingleBook(data))
-    //  .then(() => console.log(singleBook))
+      .then(() => console.log(singleBook))
       .catch(error => setErrorSingleState(true))
   }
 
