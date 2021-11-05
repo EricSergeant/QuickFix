@@ -21,14 +21,25 @@ describe('BookCardContainer view', () => {
     cy.get('.book-cover-img')
       .should('be.visible')
       .should('have.length', 3)
-      // .should('have.value')
-
-
-
   });
 
-  it.skip('Should be able to change genres by selecting a button on the navigation bar', () => {
-
+  it('Should be able to change genres by selecting a button on the navigation bar', () => {
+    cy.intercept('GET', 'https://openlibrary.org/subjects/children.json', {
+      statusCode: 201,
+      body: {
+        name: 'children',
+        works: [
+          {title: 'Red Bear', cover_id: 4, key: '/works/OL503666W', authors:[{name: 'Sam'}]},
+          {title: 'Hungry Pig', cover_id: 5, key: '/works/OL362702W', authors:[{name: 'Sara'}]},
+          {title: 'Rat in the Hat', cover_id: 6, key: '/works/OL107195W', authors:[{name: 'Gracie'}]},
+          {title: 'Little Blue Truck', cover_id: 7, key: '/works/OL107196W', authors:[{name: 'Papa'}]}
+        ]
+      }
+    })
+    cy.get('button').contains('Children').click()
+    cy.get('.book-cover-img')
+      .should('be.visible')
+      .should('have.length', 4)
   });
 
   it.skip('Should see the selected genre highlighted in green', () => {
