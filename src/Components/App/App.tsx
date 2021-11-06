@@ -12,16 +12,18 @@ import "./library.jpg"
 import { stringify } from 'querystring';
 
 export interface Book {
-  title: any;
+  title: string;
   description: any; 
   authors: any;
   links: any;
   covers: any
+  first_publish_date: string
 }
 
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
-  const [singleBook, setSingleBook] = useState<Book>({title: '', description: "" || {type: "", value: ""}, authors: [{author: {key: ""}, type: {key: ""}}], links: [{url: "", title: "", type: ""}], covers: []})
+  const [singleBook, setSingleBook] = useState<Book>({title: '', description: "" || {type: "", value: ""}, authors: [{author: {key: ""}, type: {key: ""}}], links: [{url: "", title: "", type: ""}], covers: [], first_publish_date: ""
+  })
   const [errorGetCategory, setErrorCategoryState] = useState(false)
   const [errorGetSingle, setErrorSingleState] = useState(false)
 
@@ -34,7 +36,7 @@ const App: React.FC = () => {
   const retrieveSingleBook = (id: any) => {
     getSingleBook(id)
       .then(data => setSingleBook(data))
-      .then(() => console.log(singleBook))
+      // .then(() => console.log(singleBook))
       .catch(error => setErrorSingleState(true))
   }
 

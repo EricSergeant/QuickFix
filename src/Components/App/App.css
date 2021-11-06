@@ -15,7 +15,7 @@
 }
 
 main {
-  color: white;
+  color: #fefae0;
   height: 1700px;
   display: flex;
   flex-direction: column;
