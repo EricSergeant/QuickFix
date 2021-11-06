@@ -43,18 +43,32 @@ describe('BookCardContainer view', () => {
       .should('have.length', 4)
   });
 
-
   it('Should be able to see book covers flip over and reveal the title and author', () => {
     cy.get('img[alt="Rat in the Hat"]').trigger('mouseover')
     cy.get('.book-card-back').contains('Rat in the Hat')
       .should('have.class', 'book-title')
     cy.get('.book-card-back').contains('Gracie')
       .should('have.class', 'book-authors')
-
   });
 
-  it.skip('Should be able to click on a book cover and be linked to a new page with that book\'s details', () => {
-
+  it('Should be able to click on a book cover and be linked to a new page with that book\'s details', () => {
+    cy.intercept('GET', 'https://openlibrary.org/works/OL107195W.json', {
+      statusCode: 201,
+      body: {
+        description: 'This is a great book description!',
+        title: 'Rat in the Hat',
+        covers: [6, 8, 9, 10],
+        first_publish_date: '1957',
+        links: ['www.wikipedia.com', 'www.google.com']
+      }
+    })
+    cy.get('img[alt="Rat in the Hat"]').click()
+    cy.get('.book-detail-styling')
+      .get('.title').contains('Rat in the Hat').should('be.visible')
+      .get('.publish-date').contains('1957').should('be.visible')
+      .get('.links').contains('Links outside of A Novel Idea').should('be.visible')
+    cy.get('.description').should('contain','This is a great book')
+    cy.get('.book-cover').should('be.visible')
   });
 
   it.skip('Should be redirected to an error page with a 500 status code', () => {
