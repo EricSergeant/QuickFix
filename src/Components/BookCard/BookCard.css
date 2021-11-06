@@ -1,6 +1,8 @@
 .book-card-grid {
   display: grid;
   grid-template-rows: 0.8fr 0.8fr;
+  background-color: transparent;
+  border: none;
 }
 
 .book-card {
@@ -43,7 +45,7 @@
 .book-card-back {
   text-align: center;
   background-color: #343d56;
-  color: white;
+  color: #fefae0;
   transform: rotateY(180deg);
 }
 
@@ -56,5 +58,5 @@
 }
 
 p {
-  color: white;
+  color: #fefae0;
 }
