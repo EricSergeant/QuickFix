@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# A Novel Idea
+Mod3 + Stretch Tech
+![A Novel Idea logo](https://user-images.githubusercontent.com/83723401/140617030-436fa2fe-b4e7-40b6-8d3d-3618b46d7d19.png)
 
+## Table of Contents
+  - [Abstract](#abstract)
+  - [Deployed Application](#deployed-application)
+  - [Technologies](#technologies)
+  - [Illustrations](#illustrations)
+  - [Code Architecture](#code-architecture)
+  - [Contributors](#contributors)
+  - [Wins](#wins)
+  - [Challenges & Improvements](#challenges-and-improvements)
+  - [Project Specs](#project-specs)
+
+## Abstract
+Looking for your next read? Let A Novel Idea help you! This application provides information about books in a variety of genres helping users make the difficult decision of what to read next.
+
+``The overall goal of this project was to learn and implement TypeScript for the first time in a 10 day sprint.``
+
+![Library](https://user-images.githubusercontent.com/83723401/140617276-432163f5-79c0-4c67-a4b6-59bbd1eb74dc.png)
+  
+## Deployed Application
+	- INSERT DEPLOY LINK
+
+## Technologies
+  - React
+  - TypeScript
+  - Router
+  - Cypress
+  - CSS
+  - node
+  - API from [openlibrary.org](https://openlibrary.org/)
+  - Atom/VSCode 
+
+## Illustrations
+INSERT GIF WHEN APP IS COMPLETE
+Use https://gifcap.dev/ to make GIFs
+
+![HomePage](https://user-images.githubusercontent.com/83723401/140617226-00a2cdea-e86b-4d79-96a2-14a721712590.png)
+
+## Code Architecture
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Contributors
+  - [Raquel Hill](https://github.com/Raquelhill)
+  - [Janika Hortizuela](https://github.com/jhortizu01)
+  - [Eric Sergeant](https://github.com/EricSergeant)
+  - [Renee Swick-Ziller](https://github.com/reneeswick)
 
-In the project directory, you can run:
+## Wins
+``Learning a new technology -- TypeScript!``
 
-### `npm start`
+- Independently learning TypeScript through Scrimba tutorials, YouTube videos, documentation, and each other's insight was both rewarding and joyful. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+``Overcoming Surprising Challeneges``
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- The original intention of this application shifted gears when our initial food-based API went down. Because the goal of this project was to learn TypeScript and not necessarily to make a food themed application, we regrouped quickly, found a working book related API, and carried on. Our group handled this shift with a great deal of empathy and democracy all while maintaing the deadline.
 
-### `npm test`
+## Challenges and Improvements
+``Timeline``
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Learning and implementing TypeScript in a quick 10 day sprint was challenging. TypeScript is loud and invasive, so unpacking the errors with a rapidly approaching deadline served to be quite difficult at times.
 
-### `npm run build`
+``Inconsistent Data from the APIs``
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- This application uses a free and public API that provides inconsistent data. This lead to interesting error handling and conditionals to account for all of the different data shapes being sent back to the application in network requests.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html)
