@@ -71,7 +71,14 @@ describe('BookCardContainer view', () => {
     cy.get('.book-cover').should('be.visible')
   });
 
-  it.skip('Should be redirected to an error page with a 500 status code', () => {
-
+  it('Should be redirected to an error page with a 404 status code', () => {
+    cy.visit('http://localhost:3000/error')
+    cy.intercept('GET', 'https://openlibrary.org/bananas.json', {
+      statusCode: 404,
+      body: {
+        message: 'Oh no! The server is down'
+      }
+    })
+    cy.get('h1').should('contain', 'This is embarrasing!')
   });
 });
