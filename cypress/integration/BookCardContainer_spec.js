@@ -4,7 +4,7 @@ describe('BookCardContainer view', () => {
   });
 
   it('Should be able to view all books in a chosen category', () => {
-    cy.intercept('GET', 'https://openlibrary.org/subjects/biography.json', {
+    cy.intercept('GET', 'https://openlibrary.org/subjects/kids.json', {
       statusCode: 201,
       body: {
         name: 'biography',
@@ -15,14 +15,14 @@ describe('BookCardContainer view', () => {
         ]
       }
     })
-    cy.get('button').contains('Biography').click()
+    cy.get('button').contains('Children').click()
     cy.get('.book-cover-img')
       .should('be.visible')
       .should('have.length', 3)
   });
 
-  it('Should be able to change genres by selecting a button on the navigation bar', () => {
-    cy.intercept('GET', 'https://openlibrary.org/subjects/children.json', {
+  beforeEach(() => {
+    cy.intercept('GET', 'https://openlibrary.org/subjects/biography.json', {
       statusCode: 201,
       body: {
         name: 'children',
@@ -34,19 +34,22 @@ describe('BookCardContainer view', () => {
         ]
       }
     })
-    cy.get('button').contains('Children').click()
+    cy.get('button').contains('Biography').click()
+  });
+
+  it('Should be able to change genres by selecting a button on the navigation bar', () => {
     cy.get('.book-cover-img')
       .should('be.visible')
       .should('have.length', 4)
-    // cy.get('.book-card').contains('cover_id').trigger('mouseover')
   });
 
-  it.skip('Should see the selected genre highlighted in green', () => {
 
-  });
-
-  it.skip('Should be able to see book covers flip over and reveal the title and author', () => {
-    // cy.get('.book-cover-image').trigger('mouseover')
+  it('Should be able to see book covers flip over and reveal the title and author', () => {
+    cy.get('img[alt="Rat in the Hat"]').trigger('mouseover')
+    cy.get('.book-card-back').contains('Rat in the Hat')
+      .should('have.class', 'book-title')
+    cy.get('.book-card-back').contains('Gracie')
+      .should('have.class', 'book-authors')
 
   });
 
