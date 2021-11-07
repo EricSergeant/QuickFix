@@ -7,7 +7,7 @@ import Home from '../Home/Home';
 import Error from '../Error/Error';
 import { getBookByCategory, getSingleBook } from '../../apiCalls';
 import { Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import "./library.jpg"
 import { stringify } from 'querystring';
 

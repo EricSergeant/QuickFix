@@ -35,7 +35,7 @@
   font-family: cursive;
   text-align:left;
   height: 50px;
-  width: 378px;
+  width: 345px;
   font-size: 1rem;
   padding: .5rem;
   margin: .5rem;
@@ -50,4 +50,28 @@
   background-color: #82a195;
   transform:scale(1.1);
   box-shadow: 10px 5px 5px #ffe8d6;
+}
+
+@media screen and (max-width: 800px) {
+  .home-page {
+    height: auto;
+    overflow-y: scroll;
+  }
+  
+  .genre-button-container {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .home-page {
+    align-items: center;
+    justify-content: center;
+  }
+  .genre-button-container {
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }

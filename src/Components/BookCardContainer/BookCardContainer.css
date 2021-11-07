@@ -1,7 +1,0 @@
-.book-card-container {
-  margin-left: 187px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1 rem;
-}
