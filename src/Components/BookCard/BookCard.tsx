@@ -10,11 +10,25 @@ interface Props {
 
 const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) => {
 
+  // const buildHandleEnterKeyPress = (onClick: any) => ({ onKeyDown }) => {
+  //   if (onKeyDown === 'Enter') { 
+  //     onClick(); 
+  //   }
+  // };
+
+  // const keyDownHandler = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+  //   if (event.code === "Enter") {
+  //     oneBook(id)
+  //   }
+  // };
+  
+
   return (
     <Link to={`bookDetails`}>
-    <div className="book-card-grid" onClick={() =>  oneBook(id)}>
+    <button className="book-card-grid" 
+    // onKeyDown={(event: React.KeyboardEvent<HTMLButtonElement>) => keyDownHandler(event)} 
+    onClick={() =>  oneBook(id)}>
       <div className="book-card">
-        {/* <button onClick={() => oneBook(id)}>Book Info</button> */}
         <div className="book-card-inner">
           <div className="book-card-front" >
             <img
@@ -30,7 +44,7 @@ const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) =>
           </div>
         </div>
       </div>
-    </div>
+    </button>
     </Link>
   )
 }

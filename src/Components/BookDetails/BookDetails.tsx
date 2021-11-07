@@ -26,6 +26,7 @@ interface SingleBookProps {
         <h1 className="title">{singleBook.title}</h1>
         <h2 className="author">by Jane Austen</h2>
         {singleBook.links ? <a href={singleBook.links[0].url} className="links">Go to link </a> : null }
+        
       </div> */}
      <div className="description-flex">
         <img
@@ -35,7 +36,8 @@ interface SingleBookProps {
         <div className="book-detail-styling">
           <h1 className="title">{singleBook.title}</h1>
           <h2 className="author">by Jane Austen</h2>
-          {singleBook.links ? <a href={singleBook.links[0].url} className="links">Go to link </a> : null }
+          <h3 className="publish-date">{singleBook.first_publish_date}</h3>
+          {singleBook.links ? <a href={singleBook.links[0].url} className="links">Links outside of A Novel Idea </a> : null }
         </div>
     </div>
 
@@ -46,9 +48,12 @@ interface SingleBookProps {
       
     </div>
     
+
   )
 }
 
 
 
 export default BookDetails
+
+
