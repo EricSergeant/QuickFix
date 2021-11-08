@@ -6,14 +6,14 @@ import BookDetails from '../BookDetails/BookDetails';
 import Home from '../Home/Home';
 import Error from '../Error/Error';
 import { getBookByCategory, getSingleBook } from '../../apiCalls';
-import { Route } from 'react-router-dom';
+import { Route, Switch  } from 'react-router-dom';
 import './App.css';
 import "./library.jpg"
 import { stringify } from 'querystring';
 
 export interface Book {
   title: string;
-  description: any; 
+  description: any;
   authors: any;
   links: any;
   covers: any
@@ -44,22 +44,23 @@ const App: React.FC = () => {
         <div className="backGround">
           <main>
             <h1 className="project-title">A Novel Idea</h1>
-            <Route exact path='/'>
-              <Home retrieveBooks={retrieveBooks} />
-            </Route>
-            <Route exact path='/books'>
-              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
-              <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
-            </Route>
-            <Route
-          exact path="/bookDetails">
-            <BookDetails singleBook={singleBook}/>
-            <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory}/>
-            </Route>
-            <Route exact path='/error'>
-            {/* error works, not chaing path? */}
-              <Error /> 
-            </Route>
+            <Switch>
+              <Route exact path='/'>
+                <Home retrieveBooks={retrieveBooks} />
+              </Route>
+              <Route path='/books'>
+                <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
+                <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
+              </Route>
+              <Route path="/bookDetails">
+              <BookDetails singleBook={singleBook}/>
+              <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory}/>
+              </Route>
+              <Route path='/error'>
+              {/* error works, not chaing path? */}
+                <Error />
+              </Route>
+            </Switch>
           </main>
         </div>
   )
