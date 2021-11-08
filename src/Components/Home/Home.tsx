@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = ({ retrieveBooks }) => {
       <div className='genre-button-container'>
         <Link to='/books'>
           <button className= 'home-page-btn' id='biography' onClick= {(event:any) => goToBookPage(event.target.id)}>Biography</button>
-          <button className= 'home-page-btn' id= 'children' onClick= {(event:any) => goToBookPage(event.target.id)}>Children</button>
+          <button className= 'home-page-btn' id= 'kids' onClick= {(event:any) => goToBookPage(event.target.id)}>Children</button>
           <button className= 'home-page-btn' id='fiction' onClick= {(event:any) => goToBookPage(event.target.id)}>Fiction</button>
           <button className= 'home-page-btn' id='history' onClick= {(event:any) => goToBookPage(event.target.id)}>History</button>
           <button className= 'home-page-btn' id='nonfiction' onClick= {(event:any) => goToBookPage(event.target.id)}>Nonfiction</button>
