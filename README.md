@@ -59,7 +59,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Learning and implementing TypeScript in a quick 10 day sprint was challenging. TypeScript is loud and invasive, so unpacking the errors with a rapidly approaching deadline served to be quite difficult at times.
 
-``Inconsistent Data from the APIs``
+``Inconsistent Data from the API``
 
 - This application uses a free and public API that provides inconsistent data. This lead to interesting error handling and conditionals to account for all of the different data shapes being sent back to the application in network requests.
 
