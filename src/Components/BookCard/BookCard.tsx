@@ -1,7 +1,7 @@
 import React from 'react';
 import './BookCard.scss';
 import { Link } from 'react-router-dom';
-// import { getSingleBook } from '../../apiCalls'
+import { getSingleBook } from '../../apiCalls'
 
 interface Props {
   title: string, cover_id: number, key: any, id: any, authors: any
@@ -9,24 +9,18 @@ interface Props {
 }
 
 const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) => {
-
-  // const buildHandleEnterKeyPress = (onClick: any) => ({ onKeyDown }) => {
-  //   if (onKeyDown === 'Enter') { 
-  //     onClick(); 
-  //   }
-  // };
-
-  // const keyDownHandler = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-  //   if (event.code === "Enter") {
-  //     oneBook(id)
-  //   }
-  // };
   
+  // useEffect(() => {
+  //   if (singleBook !== '') {
+  //     getSingleBook(id)
+  //     .then(data => setSingleBook(data))
+  //     // .then(() => console.log(singleBook))
+  //     .catch(error => setErrorSingleState(true))
+  // }, [id])
 
   return (
     <Link to={`bookDetails`}>
     <button className="book-card-grid" 
-    // onKeyDown={(event: React.KeyboardEvent<HTMLButtonElement>) => keyDownHandler(event)} 
     onClick={() =>  oneBook(id)}>
       <div className="book-card">
         <div className="book-card-inner">
