@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import BookPage from '../BookPage/BookPage';
 import NavBar from '../NavBar/NavBar';
 import BookCardContainer from '../BookCardContainer/BookCardContainer';
 import BookDetails from '../BookDetails/BookDetails';
@@ -9,20 +8,18 @@ import { getBookByCategory, getSingleBook } from '../../apiCalls';
 import { Route, Switch  } from 'react-router-dom';
 import './App.css';
 import "./library.jpg"
-import { stringify } from 'querystring';
 
 export interface Book {
   title: string;
-  description: any;
-  authors: any;
-  links: any;
-  covers: any
+  description?: string | {type: string, value: string};
+  links?: [{url: string, title: string, type: string}];
+  covers: number[]
   first_publish_date: string
 }
 
 const App: React.FC = () => {
   const [books, setBooks] = useState([])
-  const [singleBook, setSingleBook] = useState<Book>({title: '', description: "" || {type: "", value: ""}, authors: [{author: {key: ""}, type: {key: ""}}], links: [{url: "", title: "", type: ""}], covers: [], first_publish_date: ""
+  const [singleBook, setSingleBook] = useState<Book>({title: '', description: "" || {type: "", value: ""}, links: [{url: "", title: "", type: ""}], covers: [], first_publish_date: ""
   })
   const [errorGetCategory, setErrorCategoryState] = useState(false)
   const [errorGetSingle, setErrorSingleState] = useState(false)
@@ -30,36 +27,53 @@ const App: React.FC = () => {
   const retrieveBooks = (category: string) => {
     getBookByCategory(category)
       .then((data: { works: [] }) => setBooks(data.works))
-      .catch(error => setErrorCategoryState(true))
-  }
+      .catch((error) => {
+        setErrorCategoryState(true)
+        console.log(error)
+      }
+      )}
 
-  const retrieveSingleBook = (id: any) => {
+  const retrieveSingleBook = (id: string) => {
     getSingleBook(id)
       .then(data => setSingleBook(data))
-      // .then(() => console.log(singleBook))
-      .catch(error => setErrorSingleState(true))
-  }
+      .catch((error) => {
+        setErrorSingleState(true)
+        console.log(error)
+      }
+      )}
 
   return (
         <div className="backGround">
           <main>
             <h1 className="project-title">A Novel Idea</h1>
             <Switch>
-              <Route exact path='/'>
-                <Home retrieveBooks={retrieveBooks} />
-              </Route>
-              <Route path='/books'>
-                <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
-                <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
-              </Route>
-              <Route path="/bookDetails">
+              <Route exact path='/' render={() => {
+                return (
+              <Home retrieveBooks={retrieveBooks} />
+                )
+            }}/> 
+                
+              
+              <Route exact path='/books' render={() => {
+                return (
+                  <>
+              <BookCardContainer allBooks={books} oneBook={retrieveSingleBook} error={errorGetSingle}/>
+              <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory} />
+              </>
+                )
+            }}/>
+              <Route exact path="/bookDetails" render={() => {
+                return (
+                  <>
               <BookDetails singleBook={singleBook}/>
               <NavBar retrieveBooks={retrieveBooks} error={errorGetCategory}/>
-              </Route>
-              <Route path='/error'>
+              </>
+            )
+            }}/>
+              {/* <Route path='/error' component={Error}/> */}
               {/* error works, not chaing path? */}
-                <Error />
-              </Route>
+                {/* <Error />
+              </Route> */}
             </Switch>
           </main>
         </div>

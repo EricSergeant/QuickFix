@@ -3,7 +3,7 @@ import React from 'react';
 const Error = () => {
 
   return (
-    <h1>404: This is embarrasing! Try again later.</h1>
+    <h1>Our server has been Dewey decimated.  Please try again later.</h1>
   )
 }
 
