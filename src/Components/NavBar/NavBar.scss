@@ -41,3 +41,40 @@ button a {
   color: #f1f1f1;
   background-color: #82a195;
 }
+
+@media screen and (max-width: 600px) {
+  .sidenav {
+    height: 200px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343d56;
+    // overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    // justify-content: center;
+
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .project-title {
+    font-size: 25px;
+  }
+
+  .sidenav button {
+    padding: 8px;
+    font-size: 12px;
+    width: 75px;
+  }
+  
+  .sidenav {
+    height: 75px;
+  }
+
+
+}

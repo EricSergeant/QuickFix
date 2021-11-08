@@ -1,7 +1,7 @@
 import React from 'react';
 import BookCard from '../BookCard/BookCard';
 import Error from '../Error/Error'
-import './BookCardContainer.css';
+import './BookCardContainer.scss';
 import NavBar from '../NavBar/NavBar'
 
 interface Props {

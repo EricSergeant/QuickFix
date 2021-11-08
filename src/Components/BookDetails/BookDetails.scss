@@ -1,22 +1,32 @@
 .book-styling {
-  width: 1000px;
-  height: 800px;
-  background-color: #fefae0;
+  // width: 1000px;
+  width: 70%;
+  height: auto;
+  background-color: white;
   border-radius: 5px;
   padding: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
+  margin-left: 200px;
+  margin-bottom: 50px;
+  overflow-y: scroll;
+}
+
+.description-flex {
+  display: flex;
+  flex-direction: row;
 }
 
 .description-styling {
   margin-top: 15px;
   margin-left: 20px;
-  width: 380px;
+ // width: 380px;
   color: #343d56;
   font-size: 23px;
   font-style: italic;
   font-weight: bold;
+
 }
 
 .description {
@@ -27,7 +37,7 @@
   line-height: 1.6;
   margin-top: 6px;
   padding-top: 10px;
-  width: 935px;
+  
 }
 
 .book-detail-styling {
@@ -39,6 +49,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: auto;
 }
 
 .book-cover {
@@ -52,16 +63,49 @@
 .title {
   font-size: 35px;
   margin-bottom: 0px;
+  width: auto;
 }
 
 .author {
   font-size: 20px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 20px;
-  width: 550px;
+  //width: 550px;
+  width: 100%;
 }
 
 .links {
   margin-top: 20px;
   color: #346250;
 }
+
+@media screen and (max-width: 850px) {
+  .description-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-styling {
+    align-items: center;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .author {
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .book-styling {
+    margin-left: 0px;
+    width: 100%;
+    overflow-y: auto;
+  }
+
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import './BookCard.css';
+import './BookCard.scss';
 import { Link } from 'react-router-dom';
 // import { getSingleBook } from '../../apiCalls'
 
