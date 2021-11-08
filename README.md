@@ -34,10 +34,7 @@ Looking for your next read? Let A Novel Idea help you! This application provides
   - Atom/VSCode 
 
 ## Illustrations
-INSERT GIF WHEN APP IS COMPLETE
-Use https://gifcap.dev/ to make GIFs
-
-![HomePage](https://user-images.githubusercontent.com/83723401/140617226-00a2cdea-e86b-4d79-96a2-14a721712590.png)
+![Application Preview](https://user-images.githubusercontent.com/83723401/140775305-0f3dc9c7-ce75-4bd9-aa5b-ff6048516dfd.gif)
 
 ## Code Architecture
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
