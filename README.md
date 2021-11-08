@@ -28,7 +28,7 @@ Looking for your next read? Let A Novel Idea help you! This application provides
   - TypeScript
   - Router
   - Cypress
-  - CSS
+  - CSS/SCSS
   - node
   - API from [openlibrary.org](https://openlibrary.org/)
   - Atom/VSCode 
