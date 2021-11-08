@@ -9,14 +9,14 @@ interface SingleBookProps {
   const BookDetails: React.FC<SingleBookProps> = ({ singleBook }: SingleBookProps) => {
 
     const handleBadDescriptionData = () => {
-      if(typeof singleBook.description === "string") {
+      if(!singleBook.description || !singleBook.description.value) {
+        return <p className="description">We're sorry. There is no description for this book</p>
+      } else if (typeof singleBook.description === 'object') {
+        return <p className="description">{singleBook.description.value}</p>
+      } else if (typeof singleBook.description === "string") {
         return <p className="description">{singleBook.description}</p>
-      } else if (typeof singleBook.description !== "string") {
-        if(!singleBook.description) {
-          return <p className="description">We're sorry. There is no description for this book</p>
-        } else {
-          return <p className="description">{singleBook.description.value}</p>
-        }
+      } else {
+        return <p className="description">We're sorry. There is no description for this book</p>
       }
     }
 
@@ -36,16 +36,13 @@ interface SingleBookProps {
     </div>
 
     <div className="description-styling">Overview
-      {typeof singleBook.description === "string" ?  <p className="description">{singleBook.description}</p> : 
-      <p className="description">{singleBook.description.value}</p> }
       {handleBadDescriptionData()}
     </div>
-      
+
     </div>
-    
+
 
   )
 }
 
 export default BookDetails
-
