@@ -1,12 +1,21 @@
-import React from 'react'
-import './BookDetails.scss'
-import {Book} from '../App/App'
-
+import React, { useState, useEffect } from 'react';
+import './BookDetails.scss';
+import { Book } from '../App/App';
+import { getSingleBook } from '../../apiCalls';
 interface SingleBookProps {
-  singleBook: Book
+  id: string
 }
 
-  const BookDetails: React.FC<SingleBookProps> = ({ singleBook }: SingleBookProps) => {
+  const BookDetails: React.FC<SingleBookProps> = ({id}) => {
+    const [singleBook, setSingleBook] = useState<Book>({title: '', description: "" || {type: "", value: ""}, links: [{url: "", title: "", type: ""}], covers: [], first_publish_date: ""
+    })
+
+    useEffect(() => {
+      if(id !== '') {
+        getSingleBook(id)
+          .then(data => setSingleBook(data))
+      }
+    }, [id])
 
     const handleBadDescriptionData = () => {
       if (typeof singleBook.description === 'object') {
@@ -20,6 +29,7 @@ interface SingleBookProps {
 
   return (
     <div className="book-styling">
+    {console.log('id:', id)}
         <div className="description-flex">
         <img
           className="book-cover"

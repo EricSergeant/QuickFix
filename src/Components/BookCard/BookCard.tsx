@@ -5,11 +5,11 @@ import { getSingleBook } from '../../apiCalls'
 
 interface Props {
   title: string, cover_id: number, key: string, id: string, authors: [{name: string}]
-  oneBook: Function
+  // oneBook: Function
 }
 
-const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) => {
-  
+const BookCard: React.FC<Props> = ({ title, cover_id, id, authors }) => {
+
   // useEffect(() => {
   //   if (singleBook !== '') {
   //     getSingleBook(id)
@@ -19,9 +19,9 @@ const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) =>
   // }, [id])
 
   return (
-    <Link to={`bookDetails`}>
-    <button className="book-card-grid" 
-    onClick={() =>  oneBook(id)}>
+    <Link to={`/books${id}`}>
+    {/*<button className="book-card-grid"
+    onClick={() =>  oneBook(id)}>*/}
       <div className="book-card">
         <div className="book-card-inner">
           <div className="book-card-front" >
@@ -38,7 +38,7 @@ const BookCard: React.FC<Props> = ({ title, cover_id, id, authors, oneBook }) =>
           </div>
         </div>
       </div>
-    </button>
+    {/*</button>*/}
     </Link>
   )
 }

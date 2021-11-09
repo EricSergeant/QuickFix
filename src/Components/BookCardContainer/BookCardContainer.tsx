@@ -7,18 +7,19 @@ import NavBar from '../NavBar/NavBar'
 
 interface Props {
   allBooks: { title: string, cover_id: number, key: string, id: string, authors: [{ name: string; }] }[],
-  oneBook: Function,
+  // oneBook?: Function;
   error: boolean
 }
 
-const BookCardContainer: React.FC<Props> = ({ allBooks, oneBook, error }) => {
+const BookCardContainer: React.FC<Props> = ({ allBooks, error }) => {
   // const [books, setBooks] = useState([])
 
   const bookCards = allBooks.map((book) => {
     return (
-    <BookCard title={book.title} cover_id={book.cover_id} key={book.key} id={book.key} oneBook={oneBook} authors={book.authors} />
+    <BookCard title={book.title} cover_id={book.cover_id} key={book.key} id={book.key} authors={book.authors} />
     )
   })
+
 
   // useEffect(() => {
   //   if (category !== '') {
