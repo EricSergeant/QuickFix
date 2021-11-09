@@ -21,7 +21,7 @@ Looking for your next read? Let A Novel Idea help you! This application provides
 ![Library](https://user-images.githubusercontent.com/83723401/140617276-432163f5-79c0-4c67-a4b6-59bbd1eb74dc.png)
   
 ## Deployed Application
-	- INSERT DEPLOY LINK
+Visit the deployed application [HERE](https://quick-fix.surge.sh) 
 
 ## Technologies
   - React
